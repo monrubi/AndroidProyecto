@@ -78,7 +78,7 @@ public class Equipos extends AppCompatActivity {
         //se va llenando con los nombres hasta obtener los necesarios y se bloquea el boton de agregar y desbloquea el de jugar
         String team = etTeam.getText().toString();
         //revisa que el equipo no se repita
-        if(equipos.isEmpty() || !equipos.contains(team)) {
+        if((equipos.isEmpty() || !equipos.contains(team)) && !team.equals("")) {
             equipos.add(team);
             cont++;
             etTeam.setText("");
@@ -89,8 +89,15 @@ public class Equipos extends AppCompatActivity {
                 btAgrega.setEnabled(false);
             }
         }else{
-            etTeam.setText("");
-            Toast.makeText(Equipos.this, "Equipo existente, escoja otro nombre", Toast.LENGTH_SHORT).show();
+            //revisa si está vacío o repetido y da aviso al usuario
+            String mensaje;
+            if(team.equals(""))
+                mensaje = "Escoja un nombre";
+            else {
+                etTeam.setText("");
+                mensaje = "Equipo existente, escoja otro nombre";
+            }
+            Toast.makeText(Equipos.this, mensaje, Toast.LENGTH_SHORT).show();
         }
     }
 
