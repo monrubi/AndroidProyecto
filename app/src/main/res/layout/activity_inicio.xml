@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Inicio">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFCDD2"
+            android:gravity="center">
+            <Spinner
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:id="@+id/dlTorneos"
+                android:layout_margin="@dimen/default_padding_top"></Spinner>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/lbGanador"
+                android:text="Sin torneos jugados"
+                android:hint="Nombre del ganador"
+                android:inputType="text"
+                android:layout_marginBottom="@dimen/default_padding_bottom"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Cambiar Ganador"
+                android:id="@+id/btCambNombre"
+                android:onClick="cambiarNombre"
+                android:layout_marginBottom="@dimen/default_padding_bottom"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Eliminar Torneo"
+                android:id="@+id/btEliminaTorneoP"
+                android:onClick="eliminaTorneo"
+                android:layout_marginBottom="@dimen/default_padding_bottom"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#E1BEE7">
+            <EditText
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:hint="Nombre del torneo"
+                android:id="@+id/lbNombre"
+                android:layout_margin="@dimen/default_padding_top"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btCrearTorneo"
+                android:onClick="crear"
+                android:text="Crear Torneo"/>
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explotar"
+            android:onClick="terminate"
+            android:layout_marginTop="40dp"/>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

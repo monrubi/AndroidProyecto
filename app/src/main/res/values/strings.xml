@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Proyecto</string>
+    <string-array name="tournaments">
+        <item>Iberian Cup</item>
+        <item>Orange cup</item>
+        <item>Rob</item>
+    </string-array>
+</resources>
