@@ -77,14 +77,20 @@ public class Equipos extends AppCompatActivity {
         //se bloquea el radio buton para que no se cambie el numero de juygadores y evitar errores
         //se va llenando con los nombres hasta obtener los necesarios y se bloquea el boton de agregar y desbloquea el de jugar
         String team = etTeam.getText().toString();
-        equipos.add(team);
-        cont ++;
-        etTeam.setText("");
-        Toast.makeText(Equipos.this,"Equipo  "+team+"  agregado al Torneo ",Toast.LENGTH_SHORT).show();
-        if(cont>= num){
-            btStart.setEnabled(true);
-            etTeam.setEnabled(false);
-            btAgrega.setEnabled(false);
+        //revisa que el equipo no se repita
+        if(equipos.isEmpty() || !equipos.contains(team)) {
+            equipos.add(team);
+            cont++;
+            etTeam.setText("");
+            Toast.makeText(Equipos.this, "Equipo  " + team + "  agregado al Torneo ", Toast.LENGTH_SHORT).show();
+            if (cont >= num) {
+                btStart.setEnabled(true);
+                etTeam.setEnabled(false);
+                btAgrega.setEnabled(false);
+            }
+        }else{
+            etTeam.setText("");
+            Toast.makeText(Equipos.this, "Equipo existente, escoja otro nombre", Toast.LENGTH_SHORT).show();
         }
     }
 
